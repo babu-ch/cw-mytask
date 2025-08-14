@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         task
+// @name         task(message ver)
 // @namespace    http://tampermonkey.net/
 // @version      2025-06-08
 // @description  タスク追加簡略化script
