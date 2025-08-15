@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         task3
+// @name         task4
 // @namespace    http://tampermonkey.net/
 // @version      2025-06-09
-// @description  タスク追加簡略化script(そのチャットにタスク追加するver url ver)
+// @description  タスク追加簡略化script(そのチャットにタスク追加するver テキストver)
 // @author       You
 // @match        https://www.chatwork.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=chatwork.com
@@ -77,7 +77,8 @@ async function onClick(message) {
   await new Promise(resolve => setTimeout(resolve, 200))
   const input = document.querySelector('#_taskInputActive textarea')
 
-  await setValue(input, url)
+  const text = [...message.querySelectorAll('pre span')].map(e => e.innerText).join("\n")
+  await setValue(input, `${url}\n${text}`)
 
   try { // 担当者を設定
     const event = new MouseEvent('mouseover', {
