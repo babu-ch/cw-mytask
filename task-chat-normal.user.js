@@ -93,6 +93,7 @@ async function onClick(message) {
   } catch (e) {
     console.warn(e)
   }
+  await new Promise(resolve => setTimeout(resolve, 200))
 
   const addTaskButton = document.querySelector(
     'button[data-testid="room-sub-column_room-task_add-button"]'
