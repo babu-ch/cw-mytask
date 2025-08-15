@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         task3
 // @namespace    http://tampermonkey.net/
-// @version      2025-06-07
+// @version      2025-06-09
 // @description  タスク追加簡略化script(そのチャットにタスク追加するver)
 // @author       You
 // @match        https://www.chatwork.com/*
