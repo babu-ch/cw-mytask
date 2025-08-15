@@ -80,6 +80,18 @@ async function onClick(message) {
   const text = [...message.querySelectorAll('pre span')].map(e => e.innerText).join("\n")
   await setValue(input, `${url}\n${text}`)
 
+  // 担当者を設定
+  const event = new MouseEvent('mouseover', {
+    bubbles: true,
+    cancelable: true,
+    view: window
+  });
+  // どれかが担当者のボタンなので乱射する
+  [...document.querySelectorAll('#_taskInputActive button')].forEach(e => e.dispatchEvent(event))
+  await new Promise(resolve => setTimeout(resolve, 200))
+  // 1つ目が自分のはず
+  document.querySelector('.floatingComponentContainer .userIconImage').click()
+
   const addTaskButton = document.querySelector(
     'button[data-testid="room-sub-column_room-task_add-button"]'
   );
